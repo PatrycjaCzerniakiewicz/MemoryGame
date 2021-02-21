@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bigelow Rules', cursive;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(rgb(71, 71, 71), #222121);
+}
+
+.container {
+    position: relative;
+    padding: 20px;
+}
+
+/* TYTUŁ */
+.title {
+    font-size: 80px;
+    text-align: center;
+    letter-spacing: 12px;
+    animation: grow .5s forwards;
+}
+
+.memory {
+    animation: spin .5s forwards;
+    animation-delay: .7s;
+}
+
+/* LICZNIKI */
+.counter {
+    display: grid;
+    height: 100px;
+    grid-template-columns: repeat(3, auto);
+    font-size: 36px;
+    font-weight: bold;
+    margin: 30px 50px;
+}
+
+.timeCounter {
+    padding: 20px;
+    margin: 0 auto;
+    letter-spacing: 5px;
+}
+.clickCounter {
+    padding: 20px;
+    margin: 0 auto;
+    letter-spacing: 5px;
+}
+
+#itemClick {
+    display: block;
+}
+
+.pairsCounter {
+    padding: 20px;
+    margin: 0 auto;
+    letter-spacing: 5px;
+}
+
+/* PLANSZA */
+.gameContainer {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    margin: 20px 50px 120px;
+    justify-content: center;
+    perspective: 500px;
+}
+
+.icon {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.item {
+    width: 170px;
+    height: 170px;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.item:hover {
+    transform: scale(.9);
+    transition: .5s ease-in-out;
+    -webkit-box-shadow: 0px 0px 37px 7px #fba5c2;
+    -moz-box-shadow: 0px 0px 37px 7px #fba5c2;
+    box-shadow: 0px 0px 37px 7px #fba5c2;
+}
+
+.item.is-flipped {
+    transform: rotateY(180deg);
+  }
+
+.pink {
+    background-color: pink;
+    transform: rotateY( 180deg );
+    position: relative;
+    /* border-radius: 10%; */
+}
+.blue {
+    background-color: blue;
+    transform: rotateY( 180deg );
+    position: relative;
+    border-radius: 10%;
+
+}
+.yellow {
+    background-color: yellow;
+    transform: rotateY( 180deg );
+    position: relative;
+    border-radius: 10%;
+}
+.orange {
+    background-color: orange;
+    transform: rotateY( 180deg );
+    position: relative;
+    border-radius: 10%;
+}
+.red {
+    background-color: red;
+    transform: rotateY( 180deg );
+    position: relative;
+    border-radius: 10%;
+}
+.green {
+    background-color: green;
+    transform: rotateY( 180deg );
+    position: relative;
+    border-radius: 10%;
+}
+
+.hidden {
+    background-color: black;
+    /* border-radius: 5%; */
+
+}
+
+.rotate {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+/* NOWA GRA */
+#newGame {
+    position: absolute;
+    left: 43%;
+    bottom: 2%;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5%;
+    width: 180px;
+    transform: scale(1);
+    font-size: 36px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: #fba5c2;
+    background-color: black;
+    border: none;
+}
+
+#newGame:hover {
+    transform: scale(0.9);
+    transition: transform .5s ease-in-out;
+    -webkit-box-shadow: 0px 0px 37px 7px #fba5c2;
+    -moz-box-shadow: 0px 0px 37px 7px #fba5c2;
+    box-shadow: 0px 0px 37px 7px #fba5c2;
+}
+
+/* START */
+#check,
+#startGame {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  opacity: 0.3;
+  position: fixed;
+  color: white;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+#check.restart,
+#startGame.clickToStart {
+    display: flex;
+}
+
+p#check.restart {
+    opacity: 1;
+}
+
+button#yes,
+button#no {
+    display: block;
+    width: 100px;
+    height: 50px;
+    border-radius: 10%;
+    margin: 0 10px 0 20px;
+    cursor: pointer;
+}
+
+/* ANIMACJE */
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes grow {
+    0% {
+        width: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+/* MEDIA */
+@media only screen and (max-width : 768px) {
+    .gameContainer {
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .counter {
+        font-size: 26px;
+        font-weight: bold;
+        margin: 30px 20px;
+        text-align: center;
+    }
+
+    #newGame {
+        left: 30%;
+        bottom: 2%;
+    }
+
+    #check,
+    #startGame {
+        font-size: 56px;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .gameContainer {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .counter {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 30px 10px;
+        text-align: center;
+    }
+
+    #newGame {
+        left: 25%;
+        bottom: 2%;
+    }
+
+    #check,
+    #startGame {
+    font-size: 40px;
+}
+    
+}
+

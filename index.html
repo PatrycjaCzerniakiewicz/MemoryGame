@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Gra Memory</title>
+</head>
+<body>
+
+    <div id="startGame">
+        <p>START</p>
+    </div>
+
+    <div class="container">
+
+        <h1 class="title">MEMORY
+            <img class="memory" src="https://img.icons8.com/color/48/000000/brain--v2.png"/>
+        </h1>
+
+        <div class="counter">
+            <div class="timeCounter">CZAS: </br> 
+                <span id="timer">100</span>
+            </div>
+            <div class="clickCounter">PRÓBY: </br> 
+                <span id="itemClick">0</span>
+            </div>
+            <div class="pairsCounter">PARY: </br> 
+                <span id="pairs">0</span>
+            </div>
+        </div>
+
+        <div class="gameContainer">
+            <div class="item" data-color="pink">
+                <div class="rotate hidden"></div>
+                <div class="rotate pink">
+                    <img class="icon" src="https://img.icons8.com/color/96/000000/spongebob-squarepants.png"/>
+                </div>
+            </div>
+            <div class="item" data-color="blue">
+                <div class="rotate hidden"></div>
+                <div class="rotate blue">
+                    <img class="icon" src="https://img.icons8.com/color/96/000000/smurf.png"/>
+                </div>
+            </div>
+            <div class="item" data-color="yellow">
+                <div class="rotate hidden"></div>
+                <div class="rotate yellow">
+                    <img class="icon" src="https://img.icons8.com/color/96/000000/rick-sanchez.png"/>
+                </div>
+            </div>
+            <div class="item" data-color="orange">
+                <div class="rotate hidden"></div>
+                <div class="rotate orange">
+                    <img class="icon" src="https://img.icons8.com/color/96/000000/tom.png"/>
+                </div>
+            </div>
+            <div class="item" data-color="red">
+                <div class="rotate hidden"></div>
+                <div class="rotate red">
+                    <img class="icon" src="https://img.icons8.com/color/96/000000/woody-woodpecker.png"/>
+                </div>
+            </div>
+            <div class="item" data-color="green">
+                <div class="rotate hidden"></div>
+                <div class="rotate green">
+                    <img class="icon" src="https://img.icons8.com/color/96/000000/boruto-uzumaki.png"/>
+                </div>
+            </div>
+            <div class="item" data-color="pink">
+                <div class="rotate hidden"></div>
+                <div class="rotate pink">
+                    <img class="icon" src="https://img.icons8.com/color/96/000000/spongebob-squarepants.png"/>
+                </div>
+            </div>
+            <div class="item" data-color="blue">
+                <div class="rotate hidden"></div>
+                <div class="rotate blue">
+                    <img class="icon" src="https://img.icons8.com/color/96/000000/smurf.png"/>
+                </div>
+            </div>
+            <div class="item" data-color="yellow">
+                <div class="rotate hidden"></div>
+                <div class="rotate yellow">
+                    <img class="icon" src="https://img.icons8.com/color/96/000000/rick-sanchez.png"/>
+                </div>
+            </div>
+            <div class="item" data-color="orange">
+                <div class="rotate hidden"></div>
+                <div class="rotate orange">
+                    <img class="icon" src="https://img.icons8.com/color/96/000000/tom.png"/>
+                </div>
+            </div>
+            <div class="item" data-color="red">
+                <div class="rotate hidden"></div>
+                <div class="rotate red">
+                    <img class="icon" src="https://img.icons8.com/color/96/000000/woody-woodpecker.png"/>
+                </div>
+            </div>
+            <div class="item" data-color="green">
+                <div class="rotate hidden"></div>
+                <div class="rotate green">
+                    <img class="icon" src="https://img.icons8.com/color/96/000000/boruto-uzumaki.png"/>
+                </div>
+            </div>
+        </div>
+
+        <button id="newGame">NOWA GRA</button>
+        <div id="check">
+            <p>Czy na pewno chcesz zacząć od nowa?</p>
+            <div>
+                <button id="yes">TAK</button>
+                <button id="no">NIE</button>
+            </div>
+        </div>
+
+
+
+    </div>
+        <!-- <a href="https://icons8.com/icon/57324/rick-sanchez">Rick Sanchez icon by Icons8</a>
+        <a href="https://icons8.com/icon/v4FGrMKg2l7t/boruto-uzumaki">Boruto Uzumaki icon by Icons8</a>
+        <a href="https://icons8.com/icon/bzqXt96HRwJO/spongebob-squarepants">Spongebob Squarepants icon by Icons8</a>
+        <a href="https://icons8.com/icon/111643/smurf">Smurf icon by Icons8</a>
+        <a href="https://icons8.com/icon/32453/woody-woodpecker">Woody Woodpecker icon by Icons8</a>
+        <a href="https://icons8.com/icon/43Ee95rgf07l/tom">Tom icon by Icons8</a>
+        <a href="https://icons8.com/icon/BISYa8VExZ04/brain">Brain icon by Icons8</a> -->
+    <script src="JS/main.js"></script>
+</body>
+</html>
