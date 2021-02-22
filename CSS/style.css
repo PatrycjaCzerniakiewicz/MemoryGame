@@ -106,44 +106,35 @@ body {
     background-color: pink;
     transform: rotateY( 180deg );
     position: relative;
-    /* border-radius: 10%; */
 }
 .blue {
     background-color: blue;
     transform: rotateY( 180deg );
     position: relative;
-    border-radius: 10%;
-
 }
 .yellow {
     background-color: yellow;
     transform: rotateY( 180deg );
     position: relative;
-    border-radius: 10%;
 }
 .orange {
     background-color: orange;
     transform: rotateY( 180deg );
     position: relative;
-    border-radius: 10%;
 }
 .red {
     background-color: red;
     transform: rotateY( 180deg );
     position: relative;
-    border-radius: 10%;
 }
 .green {
     background-color: green;
     transform: rotateY( 180deg );
     position: relative;
-    border-radius: 10%;
 }
 
 .hidden {
     background-color: black;
-    /* border-radius: 5%; */
-
 }
 
 .rotate {
@@ -179,9 +170,14 @@ body {
     box-shadow: 0px 0px 37px 7px #fba5c2;
 }
 
+.block-clicking {
+    pointer-events: none;
+}
+
 /* START */
 #check,
-#startGame {
+#end,
+#win {
   top: 0;
   left: 0;
   right: 0;
@@ -199,16 +195,15 @@ body {
 }
 
 #check.restart,
-#startGame.clickToStart {
+#end.restart,
+#win.restart {
     display: flex;
 }
 
-p#check.restart {
-    opacity: 1;
-}
-
 button#yes,
-button#no {
+button#no,
+button#tryAgainEnd,
+button#tryAgainWin {
     display: block;
     width: 100px;
     height: 50px;
