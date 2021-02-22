@@ -16,13 +16,13 @@ let firstItem, secondItem
 items = [...items]
 let openedCards = 0;
 let pairs = 0;
-let clicks = 0;
+let click = 0;
 let pairsToWin = 6;
 
 const resetGame = () => {
     openedCards = 0;
     pairs = 0;
-    clicks = 0;
+    click = 0;
 }
 
 // timer
@@ -126,8 +126,6 @@ const gameWinner = () => {
 }
 
 // ilość kliknięć
-click = 0;
-
 items.forEach((item) => {
     item.addEventListener("click", function () {
         click += 1

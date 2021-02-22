@@ -151,7 +151,7 @@ body {
     bottom: 2%;
     padding: 10px;
     margin: 20px;
-    border-radius: 5%;
+    border-radius: 10%;
     width: 180px;
     transform: scale(1);
     font-size: 36px;
@@ -160,6 +160,8 @@ body {
     color: #fba5c2;
     background-color: black;
     border: none;
+    cursor: pointer;
+    outline: none;
 }
 
 #newGame:hover {
@@ -186,8 +188,7 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  opacity: 0.3;
+  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   color: white;
   font-size: 80px;
@@ -198,18 +199,38 @@ body {
 #end.restart,
 #win.restart {
     display: flex;
+    flex-direction: column;
 }
 
 button#yes,
 button#no,
 button#tryAgainEnd,
 button#tryAgainWin {
-    display: block;
-    width: 100px;
-    height: 50px;
+    top: 100px;
+    display: inline-block;
+    width: 130px;
+    height: 80px;
     border-radius: 10%;
-    margin: 0 10px 0 20px;
+    margin: 0 10px;
     cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: #fba5c2;
+    background-color: black;
+    transform: scale(1);
+}
+
+button#yes:hover,
+button#no:hover,
+button#tryAgainEnd:hover,
+button#tryAgainWin:hover {
+    transform: scale(0.9);
+    transition: transform .5s ease-in-out;
+    -webkit-box-shadow: 0px 0px 37px 7px #fba5c2;
+    -moz-box-shadow: 0px 0px 37px 7px #fba5c2;
+    box-shadow: 0px 0px 37px 7px #fba5c2;
 }
 
 /* ANIMACJE */
