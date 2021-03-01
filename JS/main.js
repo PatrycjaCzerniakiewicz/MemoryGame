@@ -19,6 +19,7 @@ let pairs = 0;
 let click = 0;
 let pairsToWin = 6;
 
+
 const resetGame = () => {
     openedCards = 0;
     pairs = 0;
@@ -28,14 +29,17 @@ const resetGame = () => {
 // timer
 let counter = 100
 
-const setTimer = setInterval(() => {
+const countTime = () => {
     counter--
     timer.innerText = counter
     if (counter === 0) {
         clearInterval(setTimer);
         gameOver();
     }
-}, 1000);
+}
+
+let setTimer = setInterval(countTime, 1000);
+
 
 const gameOver = () => {
     end.classList.toggle("restart")
@@ -44,6 +48,7 @@ const gameOver = () => {
         randomItems()
     })
 }
+
 
 const startNewGame = () => {
     resetGame();
@@ -58,12 +63,13 @@ const startNewGame = () => {
 }
 startNewGame();
 
+
 // rotacja 3D
 function rotate(event) {
     if (this === firstItem) return
     this.classList.toggle("is-flipped");
     openedCards++;
-    
+
 
     if (openedCards === 1) {
         firstItem = event.currentTarget;
@@ -72,12 +78,18 @@ function rotate(event) {
     if (openedCards === 2) {
         blockFlipping();
         checkIfPair(event.currentTarget);
+        countClicks();
     }
 }
 
 items.forEach((item) => {
     item.addEventListener("click", rotate)
 })
+
+const countClicks = () => {
+    click++
+    itemClick.innerHTML = click;
+}
 
 
 const checkIfPair = (item) => {
@@ -125,29 +137,10 @@ const gameWinner = () => {
     })
 }
 
-// ilość kliknięć
-items.forEach((item) => {
-    item.addEventListener("click", function () {
-        click += 1
-        itemClick.innerHTML = click
-    })
-})
-
-
-
-const secondClick = () => {
-    if (parseInt(click) % 2 === 0) {
-        items.forEach((item => {
-            item.removeEventListener("click", rotate)
-        }))
-    } else {
-        rotate()
-    }
-}
-
 
 // nowa gra
 newGame.addEventListener("click", () => {
+    clearInterval(setTimer);
     check.classList.toggle("restart")
 })
 
@@ -157,7 +150,8 @@ yes.addEventListener("click", () => {
 })
 
 no.addEventListener("click", () => {
-    check.classList.remove("restart")
+    setTimer = setInterval(countTime, 1000);
+    check.classList.remove("restart");
 })
 
 

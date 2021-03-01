@@ -172,7 +172,8 @@ body {
     box-shadow: 0px 0px 37px 7px #fba5c2;
 }
 
-.block-clicking {
+.block-clicking,
+.paired {
     pointer-events: none;
 }
 
